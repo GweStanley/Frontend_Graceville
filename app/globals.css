@@ -2,21 +2,18 @@
    GLOBAL BASE
 ========================= */
 
-* {
-  box-sizing: border-box;
+.page {
+  font-family: Arial, sans-serif;
+  color: #1b1b1b;
   margin: 0;
   padding: 0;
 }
 
-body {
+.appBody {
+  margin: 0;
   font-family: Arial, sans-serif;
-  color: #111;
   background: #fff;
-}
-
-.page {
-  font-family: Arial, sans-serif;
-  color: #1b1b1b;
+  color: #111;
 }
 
 .mainContent {
@@ -57,7 +54,7 @@ body {
   font-size: 15px;
 }
 
-/* CENTER LINKS */
+/* CENTER */
 .center {
   display: flex;
   gap: 18px;
@@ -83,8 +80,8 @@ body {
 
 /* BUTTONS */
 .loginBtn,
-.applyBtn,
-.apply {
+.apply,
+.applyBtn {
   padding: 7px 12px;
   border-radius: 6px;
   font-weight: 600;
@@ -96,15 +93,16 @@ body {
   color: black;
 }
 
-.applyBtn,
-.apply {
-  background: #fff;
+.apply,
+.applyBtn {
+  background: white;
   color: #0b1f3a;
 }
 
 /* USER */
 .userWrapper {
   position: relative;
+  cursor: pointer;
 }
 
 .userBtn {
@@ -112,47 +110,48 @@ body {
   color: #0b1f3a;
   padding: 6px 10px;
   border-radius: 6px;
-  cursor: pointer;
+  font-weight: 500;
 }
 
-/* DROPDOWN (FIXED - NO RED BACKGROUND BUG) */
+/* DROPDOWN */
 .dropdown {
   position: absolute;
-  top: 42px;
   right: 0;
+  top: 45px;
   background: white;
-  color: #111;
+  color: #0b1f3a;
   min-width: 160px;
   border-radius: 8px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   overflow: hidden;
+  z-index: 9999;
 }
 
-.dropdown a {
+.dropdownItem {
   display: block;
-  padding: 12px 14px;
+  padding: 10px 14px;
   text-decoration: none;
   color: #0b1f3a;
   font-size: 14px;
 }
 
-.dropdown a:hover {
-  background: #f2f2f2;
+.dropdownItem:hover {
+  background: #f4f6f8;
 }
 
-.dropdown button {
+.dropdownBtn {
   width: 100%;
-  padding: 12px 14px;
+  padding: 10px 14px;
   border: none;
   background: none;
   text-align: left;
   cursor: pointer;
+  color: #0b1f3a;
   font-size: 14px;
-  color: #b00020;
 }
 
-.dropdown button:hover {
-  background: #f2f2f2;
+.dropdownBtn:hover {
+  background: #f4f6f8;
 }
 
 /* HAMBURGER */
@@ -168,14 +167,16 @@ body {
 }
 
 /* =========================
-   HERO
+   HERO SECTION
 ========================= */
 
 .heroSplit {
   display: flex;
   min-height: 80vh;
+  width: 100%;
 }
 
+/* LEFT IMAGE */
 .heroImage {
   flex: 1;
   background-image: url("/GenInforGraphix.jpeg");
@@ -183,6 +184,7 @@ body {
   background-position: center;
 }
 
+/* RIGHT CONTENT */
 .heroContent {
   flex: 1;
   padding: 60px;
@@ -210,9 +212,9 @@ body {
 .heroCTA {
   display: flex;
   gap: 12px;
+  margin-top: 10px;
 }
 
-/* BUTTONS */
 .primaryBtn {
   background: #0b1f3a;
   color: white;
@@ -229,12 +231,11 @@ body {
   text-decoration: none;
 }
 
-/* =========================
-   MOBILE FIX (NAV + HERO)
-========================= */
+/* ================= MOBILE NAV + HERO ================= */
 
 @media (max-width: 768px) {
 
+  /* NAVBAR */
   .center,
   .right {
     display: none;
@@ -262,13 +263,14 @@ body {
     font-size: 16px;
   }
 
-  /* HERO MOBILE */
+  /* HERO */
   .heroSplit {
     flex-direction: column;
   }
 
   .heroImage {
     height: 250px;
+    width: 100%;
   }
 
   .heroContent {
@@ -287,29 +289,39 @@ body {
 }
 
 /* =========================
-   DASHBOARD
+   SECTIONS
 ========================= */
 
-.dash {
-  padding: 40px;
-  background: #f7f9fc;
-  min-height: 100vh;
-}
-
-/* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.card {
+.section {
+  padding: 60px;
   background: white;
-  padding: 22px;
-  border-radius: 12px;
+}
+
+.section.alt {
+  background: #f4f6f8;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+}
+
+.section p,
+.section ol,
+.section ul {
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background: #0b1f3a;
+  color: white;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  cursor: pointer;
+  padding: 20px;
+  margin-top: 60px;
 }
 
 /* =========================
@@ -329,140 +341,211 @@ body {
   padding: 40px;
   border-radius: 10px;
   width: 320px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-  background: #0b1f3a;
-  color: white;
   text-align: center;
-  padding: 20px;
-  margin-top: 60px;
 }
+
+.loginBox h2 {
+  margin-bottom: 5px;
+}
+
+.subtext {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.loginBox input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.loginBox button {
+  width: 100%;
+  padding: 10px;
+  background: #f5c542;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
 /* =========================
-   CONTACT PAGE
+   DASHBOARD
 ========================= */
 
-.contactPage {
-  padding: 60px 40px;
+.dash {
+  padding: 40px;
   background: #f7f9fc;
   min-height: 100vh;
 }
 
-/* HEADER */
+.dash h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+  color: #0b1f3a;
+  text-align: center;
+}
+
+.dash p {
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* FORMS */
+.cardForm {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+}
+
+.cardForm input,
+.cardForm select {
+  padding: 11px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.cardForm button {
+  padding: 11px;
+  background: #0b1f3a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+/* =========================
+   LESSON VIEW
+========================= */
+
+.lessonPage {
+  display: flex;
+  height: 100vh;
+}
+
+.lessonList {
+  width: 250px;
+  background: #f4f6f8;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.lessonItem {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.lessonItem:hover {
+  background: #e0e0e0;
+}
+
+.lessonContent {
+  flex: 1;
+  padding: 30px;
+}
+
+/* ACTIVE */
+.activeCard {
+  border: 2px solid #0b1f3a;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contactPage {
+  padding: 60px 40px;
+}
+
 .contactHeader {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.contactHeader h1 {
-  font-size: 32px;
-  color: #0b1f3a;
-  margin-bottom: 10px;
-}
-
-.contactHeader p {
-  color: #555;
-  font-size: 15px;
-}
-
-/* GRID LAYOUT */
 .contactGrid {
   display: flex;
   gap: 40px;
-  justify-content: center;
-  align-items: flex-start;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* FORM BOX */
 .contactForm {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  width: 350px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 320px;
+  background: #f4f6f8;
+  padding: 25px;
+  border-radius: 10px;
 }
 
-/* INPUTS */
 .contactForm input,
 .contactForm textarea {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 14px;
-  outline: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-.contactForm textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-/* BUTTON */
 .contactForm button {
-  padding: 12px;
+  padding: 10px;
   background: #0b1f3a;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
-}
-
-.contactForm button:hover {
-  background: #08162a;
-}
-
-/* INFO CARD (if you have contact details side) */
-.contactInfo {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  width: 300px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-.contactInfo h3 {
-  margin-bottom: 10px;
-  color: #0b1f3a;
-}
-
-.contactInfo p {
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: #444;
 }
 
 /* =========================
-   MOBILE FIX
+   FINAL MOBILE FIX
 ========================= */
 
 @media (max-width: 768px) {
-
-  .contactPage {
-    padding: 30px 15px;
+  .dash {
+    padding: 20px;
   }
 
-  .contactHeader h1 {
-    font-size: 24px;
-  }
-
-  .contactGrid {
+  .lessonPage {
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
   }
 
-  .contactForm,
-  .contactInfo {
+  .lessonList {
     width: 100%;
-    max-width: 400px;
   }
 }
