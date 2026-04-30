@@ -3,34 +3,36 @@ export default function Home() {
     <div className="page">
 
 
-      <section className="heroSplit">
+   <section style={styles.heroSplit}>
 
   {/* LEFT: IMAGE */}
-  <div className="heroImage"></div>
+  <div style={styles.heroImage}></div>
 
   {/* RIGHT: TEXT */}
-  <div className="heroContent">
+  <div style={styles.heroContent}>
 
-    <h1>
+    <h1 style={styles.h1}>
       Welcome to Graceville International Christian Academy, Yaoundé
     </h1>
 
-    <p className="motto">
+    <p style={styles.motto}>
       ✨ A Shining Light to the Nations — Matthew 5:16
     </p>
 
-    <p className="quote">
+    <p style={styles.quote}>
       “Let your light so shine before men, that they may see your good works
       and glorify your Father in heaven.”
     </p>
 
-    <div className="heroCTA">
-      <a href="/login" className="primaryBtn">Login</a>
+    <div style={styles.cta}>
+      <a href="/login" style={styles.primaryBtn}>
+        Login
+      </a>
 
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSePPooFxqdYLX7V31EkAcwLNEwACrGbZabX9pSL0z7k7XKg-Q/viewform?usp=publish-editor"
         target="_blank"
-        className="secondaryBtn"
+        style={styles.secondaryBtn}
       >
         Apply for Admission
       </a>
@@ -125,4 +127,105 @@ export default function Home() {
 
     </div>
   );
+}
+const styles = {
+  heroSplit: {
+    display: "flex",
+    minHeight: "80vh",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "40px",
+    gap: "30px",
+  },
+
+  heroImage: {
+    flex: 1,
+    minHeight: "400px",
+    backgroundImage: "url('/hero.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    borderRadius: "12px",
+  },
+
+  heroContent: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    gap: "15px",
+  },
+
+  h1: {
+    fontSize: "42px",
+    lineHeight: "1.2",
+    margin: 0,
+  },
+
+  motto: {
+    fontSize: "18px",
+    fontWeight: "600",
+    color: "#0b1f3a",
+  },
+
+  quote: {
+    fontSize: "16px",
+    opacity: 0.8,
+    lineHeight: "1.6",
+  },
+
+  cta: {
+    display: "flex",
+    gap: "12px",
+    marginTop: "10px",
+    flexWrap: "wrap",
+  },
+
+  primaryBtn: {
+    background: "#0b1f3a",
+    color: "white",
+    padding: "10px 16px",
+    borderRadius: "6px",
+    textDecoration: "none",
+    fontWeight: "600",
+  },
+
+  secondaryBtn: {
+    background: "#f5c542",
+    color: "#000",
+    padding: "10px 16px",
+    borderRadius: "6px",
+    textDecoration: "none",
+    fontWeight: "600",
+  },
+};
+if (typeof window !== "undefined") {
+  const style = document.createElement("style");
+
+  style.innerHTML = `
+    @media (max-width: 768px) {
+      .heroSplit {
+        flex-direction: column !important;
+        padding: 20px !important;
+        text-align: center;
+      }
+
+      .heroImage {
+        width: 100% !important;
+        min-height: 250px !important;
+      }
+
+      .heroContent h1 {
+        font-size: 26px !important;
+      }
+
+      .heroContent {
+        align-items: center;
+      }
+
+      .cta {
+        justify-content: center;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
 }
