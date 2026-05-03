@@ -44,8 +44,9 @@ export default function ContactPage() {
           <h3>Graceville International Christian Academy</h3>
 
           <p><strong>Location:</strong> Yaoundé, Cameroon</p>
-          <p><strong>Phone:</strong> +237 XXX XXX XXX</p>
-          <p><strong>Email:</strong> info@graceville.edu</p>
+          <p><strong>Phone:</strong> +237 670620778</p>
+           <p><strong>Phone:</strong> +237 690059768</p>
+          <p><strong>Email:</strong> gracevilleacademy@gmail.com</p>
 
           <p className="note">
             Admissions for 2026/2027 open from 1 July 2026.
@@ -53,7 +54,7 @@ export default function ContactPage() {
 
           {/* WHATSAPP BUTTON */}
           <a
-            href="https://wa.me/237XXXXXXXXX"
+            href="https://wa.me/237670620778"
             target="_blank"
             className="whatsappBtn"
           >

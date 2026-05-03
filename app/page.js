@@ -1,47 +1,98 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Home() {
+
+  const slides = [
+    {
+      image: "/GenInforGraphix.jpeg",
+      title: "Welcome to Graceville International Christian Academy, Yaoundé",
+      text: "✨ A Shining Light to the Nations — Matthew 5:16",
+      sub: "Raising globally minded, Christ-centered learners."
+    },
+    {
+      image: "/library.jpeg",
+      title: "Academic Excellence with Cambridge Curriculum",
+      text: "From Primary to A Levels",
+      sub: "Globally recognized. Locally grounded."
+    },
+    {
+      image: "/diverse.jpeg",
+      title: "Faith • Character • Leadership",
+      text: "We nurture the whole child",
+      sub: "Academic, spiritual, and personal growth."
+    },
+        {
+      image: "/music.jpg",
+      title: "Talent • Development • Creativity",
+      text: "We nurture natural talents",
+      sub: "Musical development, sports etc"
+    }
+
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="page">
 
+      {/* ================= HERO CAROUSEL ================= */}
+      <section className="carousel">
 
-   <section className="heroSplit">
+        {slides.map((slide, i) => (
+          <div
+            key={i}
+            className={`slide ${i === index ? "active" : ""}`}
+            style={{ backgroundImage: `url(${slide.image})` }}
+          >
+            <div className="overlay">
 
-  {/* LEFT IMAGE (KEEP THIS - FIXED) */}
-  <div className="heroImage"></div>
+              <div className="content">
+                <h1>{slide.title}</h1>
+                <p className="motto">{slide.text}</p>
+                <p className="sub">{slide.sub}</p>
 
-  {/* RIGHT CONTENT */}
-  <div className="heroContent">
+                <div className="heroCTA">
+                  <a href="/login" className="primaryBtn">Login</a>
 
-    <h1>
-      Welcome to Graceville International Christian Academy, Yaoundé
-    </h1>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSePPooFxqdYLX7V31EkAcwLNEwACrGbZabX9pSL0z7k7XKg-Q/viewform"
+                    target="_blank"
+                    className="secondaryBtn"
+                  >
+                    Apply for Admission
+                  </a>
+                </div>
+              </div>
 
-    <p className="motto">
-      ✨ A Shining Light to the Nations — Matthew 5:16
-    </p>
+            </div>
+          </div>
+        ))}
 
-    <p className="quote">
-      “Let your light so shine before men, that they may see your good works
-      and glorify your Father in heaven.”
-    </p>
+        {/* DOTS */}
+        <div className="controls">
+          {slides.map((_, i) => (
+            <span
+              key={i}
+              className={i === index ? "dot activeDot" : "dot"}
+              onClick={() => setIndex(i)}
+            />
+          ))}
+        </div>
 
-    <div className="heroCTA">
-      <a href="/login" className="primaryBtn">Login</a>
+      </section>
 
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSePPooFxqdYLX7V31EkAcwLNEwACrGbZabX9pSL0z7k7XKg-Q/viewform?usp=publish-editor"
-        target="_blank"
-        className="secondaryBtn"
-      >
-        Apply for Admission
-      </a>
-    </div>
-
-  </div>
-
-</section>
-
-      {/* INTRO SECTION */}
-      <section id='about' className="section">
+      {/* ================= INTRO ================= */}
+      <section id="about" className="section">
         <h2>🎯 Our Mission</h2>
         <p>
           To equip learners for global influence through academic excellence,
@@ -55,7 +106,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* CAMBRIDGE SECTION */}
+      {/* ================= CAMBRIDGE ================= */}
       <section className="section alt">
         <h2>Why Cambridge at Graceville?</h2>
 
@@ -68,16 +119,16 @@ export default function Home() {
         <h3>We are committed to:</h3>
 
         <ol>
-          <li>Strong Foundations: A robust yet flexible primary framework that prepares pupils for secondary success and the demands of a global world.</li>
-          <li>Clear Academic Pathway: Progression through Cambridge Primary Checkpoint to IGCSE, Cambridge O Level, and Cambridge International AS & A Levels — qualifications respected by universities worldwide.</li>
-          <li>Global + Local Relevance: A curriculum that meets international standards while honoring Cameroonian culture and context.</li>
-          <li>Core Competency Development: Critical thinking, problem-solving, and confident communication in standard British English.</li>
-          <li>Global Outlook: Learners appreciate international perspectives while valuing their local identity.</li>
-          <li>Benchmarked Excellence: Consistent quality and standards through Cambridge’s international framework.</li>
+          <li>Strong Foundations: A robust yet flexible primary framework.</li>
+          <li>Clear Academic Pathway: From Checkpoint to A Levels.</li>
+          <li>Global + Local Relevance: International standards with local context.</li>
+          <li>Core Competency Development: Critical thinking & communication.</li>
+          <li>Global Outlook: Appreciating international perspectives.</li>
+          <li>Benchmarked Excellence: Consistent global standards.</li>
         </ol>
       </section>
 
-      {/* GOAL SECTION */}
+      {/* ================= GOAL ================= */}
       <section className="section">
         <h2>Our Goal</h2>
 
@@ -87,21 +138,21 @@ export default function Home() {
         </p>
 
         <blockquote>
-          “Train up a child in the way he should go, and when he is old he will not depart from it.” — Proverbs 22:6
+          “Train up a child in the way he should go...” — Proverbs 22:6
         </blockquote>
       </section>
 
-      {/* CORE SUBJECTS */}
+      {/* ================= SUBJECTS ================= */}
       <section className="section alt">
         <h2>Core Subjects</h2>
         <p>
-          English | Mathematics | Science | Art & Design | Computing & Digital Literacy |
-          English as a Second Language | Global Perspectives | Humanities |
-          Modern Foreign Languages | Music | Physical Education | Wellbeing
+          English | Mathematics | Science | Art & Design | Computing |
+          ESL | Global Perspectives | Humanities |
+          Languages | Music | Physical Education | Wellbeing
         </p>
       </section>
 
-      {/* ADMISSIONS */}
+      {/* ================= ADMISSIONS ================= */}
       <section className="section admissions">
         <h2>Admissions 2026/2027</h2>
 
@@ -114,14 +165,13 @@ export default function Home() {
         </p>
 
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSePPooFxqdYLX7V31EkAcwLNEwACrGbZabX9pSL0z7k7XKg-Q/viewform?usp=publish-editor"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSePPooFxqdYLX7V31EkAcwLNEwACrGbZabX9pSL0z7k7XKg-Q/viewform"
           target="_blank"
           className="primaryBtn"
         >
           Apply Now
         </a>
       </section>
-
 
     </div>
   );

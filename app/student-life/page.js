@@ -14,13 +14,6 @@ export default function StudentLife() {
             A vibrant journey of learning, faith, creativity, and personal growth.
           </p>
 
-          <div style={styles.heroImageBox}>
-            <img
-              src="/logo.jpeg"
-              alt="Student Life at Graceville"
-              style={styles.heroImage}
-            />
-          </div>
 
         </div>
       </section>
@@ -132,7 +125,7 @@ const styles = {
 
   /* HERO */
   hero: {
-    backgroundImage: "url('/hero.jpg')",
+    backgroundImage: "url('/student_class.jpeg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     minHeight: "70vh",

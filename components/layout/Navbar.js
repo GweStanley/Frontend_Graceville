@@ -37,7 +37,7 @@ export default function Navbar() {
 
         {/* LEFT */}
         <div className="left">
-          <img src="/logo.png" className="logo" />
+          <img src="/logo.jpeg" className="logo" />
           <span className="brand">Graceville</span>
         </div>
 
