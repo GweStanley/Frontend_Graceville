@@ -128,6 +128,13 @@ export default function Navbar() {
               </button>
             </>
           )}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSePPooFxqdYLX7V31EkAcwLNEwACrGbZabX9pSL0z7k7XKg-Q/viewform"
+            target="_blank"
+            className="applyBtn"
+          >
+            Apply for Admission
+          </a>
 
         </div>
       )}
