@@ -54,6 +54,7 @@ export default function Navbar() {
           <Link href="/">Home</Link>
           <Link href="/student-life">Student Life</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/announcements">Announcements</Link>
         </div>
 
         {/* RIGHT */}
@@ -107,6 +108,7 @@ export default function Navbar() {
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link href="/student-life" onClick={() => setMenuOpen(false)}>Student Life</Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/announcements">Announcements</Link>
 
           {!user ? (
             <Link href="/login" onClick={() => setMenuOpen(false)}>

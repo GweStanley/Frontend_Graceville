@@ -44,21 +44,15 @@ export default function StudentDashboard() {
           📊 Results
         </div>
 
-        {/* DIGITAL LIBRARY */}
-        <div
-          className="card"
-          onClick={() => router.push("/student/library")}
-        >
-          📖 Digital Library
-        </div>
-
-        {/* RESOURCES */}
-        <div
-          className="card"
-          onClick={() => router.push("/student/resources")}
-        >
-          📂 Resources
-        </div>
+                    {/* DIGITAL LIBRARY */}
+{/* DIGITAL LIBRARY */}
+<div
+  className="card"
+  onClick={() => router.push("/library")}
+  style={{ cursor: "pointer" }}
+>
+  📖 Digital Library
+</div>        {/* RESOURCES */}
 
       </div>
     </div>

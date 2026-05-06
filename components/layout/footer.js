@@ -1,9 +1,8 @@
 export default function Footer() {
   return (
     <footer style={styles.footer}>
-
       <div style={styles.container}>
-
+        
         {/* BRAND */}
         <div style={styles.brand}>
           <h3 style={styles.h3}>Graceville International School</h3>
@@ -12,12 +11,13 @@ export default function Footer() {
 
         {/* LINKS */}
         <div style={styles.links}>
-          <a href="/#about">About</a>
-          <a href="/student-life">Campus Experiebce</a>
+          <a href="/#about" style={styles.link}>About</a>
+          <a href="/student-life" style={styles.link}>Campus Experience</a>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSePPooFxqdYLX7V31EkAcwLNEwACrGbZabX9pSL0z7k7XKg-Q/viewform"
             target="_blank"
             rel="noreferrer"
+            style={styles.linkHighlight}
           >
             Admissions
           </a>
@@ -25,32 +25,50 @@ export default function Footer() {
 
         {/* SOCIAL */}
         <div style={styles.social}>
-          <p style={styles.text}>Follow Us</p>
+          <p style={styles.sectionTitle}>Follow Us</p>
 
           <div style={styles.icons}>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
+            <a
+              style={styles.iconLink}
+              href="https://www.facebook.com/share/1C4SBK3a1v/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Facebook
+            </a>
+
+            <a
+              style={styles.iconLink}
+              href="https://www.instagram.com/gracevilleacademy?igsh=NDV6eGp2bTN0ZnM5&utm_source=ig_contact_invite"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
+
+            <a
+              style={styles.iconLink}
+              href="https://www.tiktok.com/@gracevilleacademy?_r=1&_t=ZS-963Foubv7h6"
+              target="_blank"
+              rel="noreferrer"
+            >
+              TikTok
+            </a>
           </div>
         </div>
-
       </div>
 
       {/* BOTTOM */}
       <div style={styles.bottom}>
         © {new Date().getFullYear()} Graceville International Christian Academy
       </div>
-
     </footer>
   );
 }
-
-/* ================= INLINE STYLES ================= */
-
 const styles = {
   footer: {
-    backgroundColor: "#406da0", // darker than navbar → no clash
-    color: "#ffffff",
+    backgroundColor: "#0b1f3a",
+    color: "#fff",
     marginTop: "60px",
   },
 
@@ -70,7 +88,7 @@ const styles = {
   h3: {
     margin: 0,
     fontSize: "18px",
-    color: "#f5c542", // gold accent for identity
+    color: "#f5c542",
   },
 
   text: {
@@ -86,44 +104,45 @@ const styles = {
   },
 
   link: {
-    color: "#ffffff",
+    color: "#fff",
     textDecoration: "none",
     fontSize: "14px",
     opacity: 0.85,
   },
 
   linkHighlight: {
-    color: "#08172b",
     backgroundColor: "#f5c542",
-    padding: "6px 10px",
-    borderRadius: "5px",
-    textDecoration: "none",
+    color: "#08172b",
+    padding: "8px 12px",
+    borderRadius: "6px",
     fontWeight: "600",
+    textDecoration: "none",
     width: "fit-content",
   },
 
   social: {
     display: "flex",
     flexDirection: "column",
-    gap: "10px",
+    gap: "12px",
   },
 
   sectionTitle: {
     margin: 0,
     fontSize: "14px",
     fontWeight: "600",
-    color: "#ffffff",
   },
 
-  iconRow: {
+  icons: {
     display: "flex",
     flexDirection: "column",
-    gap: "8px",
+    gap: "10px",
   },
 
-  socialLink: {
-    color: "#ffffff",
-    opacity: 0.8,
+  iconLink: {
+    padding: "10px 12px",
+    borderRadius: "8px",
+    backgroundColor: "rgba(255,255,255,0.08)",
+    color: "#fff",
     textDecoration: "none",
     fontSize: "14px",
   },
