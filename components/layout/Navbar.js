@@ -46,7 +46,7 @@ export default function Navbar() {
           className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          ☰
+          Menu ☰
         </div>
 
         {/* DESKTOP LINKS */}

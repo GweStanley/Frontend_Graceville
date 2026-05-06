@@ -62,14 +62,14 @@ export default function Home() {
                 <p className="sub">{slide.sub}</p>
 
                 <div className="heroCTA">
-                  <a href="/login" className="primaryBtn">Login</a>
+                  <a href="/#about" className="primaryBtn"> Learn More</a>
 
                   <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSePPooFxqdYLX7V31EkAcwLNEwACrGbZabX9pSL0z7k7XKg-Q/viewform"
+                    href="/student-life"
                     target="_blank"
                     className="secondaryBtn"
                   >
-                    Apply for Admission
+                    Life at Graceville..
                   </a>
                 </div>
               </div>
