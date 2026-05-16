@@ -125,7 +125,7 @@ const styles = {
 
   /* HERO */
   hero: {
-    backgroundImage: "url('/student_class.jpeg')",
+    backgroundImage: "url('/student-life.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     minHeight: "70vh",
@@ -133,7 +133,7 @@ const styles = {
   },
 
   overlay: {
-    backgroundColor: "rgba(64, 224, 208)",
+    backgroundColor: "gba(64, 224, 208)",
     color: "white",
     padding: "60px 30px",
     minHeight: "70vh",
@@ -145,12 +145,22 @@ const styles = {
   heroTitle: {
     fontSize: "40px",
     marginBottom: "10px",
+    backgroundColor:'#8080807f',
+    marginLeft:'25%',
+     marginRight:'25%',
+    borderRadius:'10%',
   },
 
   heroText: {
-    fontSize: "18px",
+    fontSize: "25px",
     maxWidth: "600px",
     marginBottom: "20px",
+     backgroundColor:'#4defea7f',
+    marginLeft:'25%',
+    marginRight:'25%',
+        borderRadius:'8%',
+
+
   },
 
   heroImageBox: {
@@ -190,7 +200,7 @@ const styles = {
   },
 
   card: {
-    background: "#fff",
+    background: "rgba(119, 238, 238, 0.33)",
     padding: "20px",
     borderRadius: "10px",
     boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
