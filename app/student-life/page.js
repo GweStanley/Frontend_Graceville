@@ -113,7 +113,7 @@ const activities = [
   { img: "/sports.jpg", title: "Sports", text: "Teamwork, discipline, physical excellence." },
   { img: "/music.jpg", title: "Music", text: "Creativity, worship, artistic expression." },
   { img: "/arts.jpg", title: "Arts & Crafts", text: "Imagination and hands-on skills." },
-  { img: "/swimming.jpg", title: "Swimming", text: "Confidence and physical development." },
+  { img: "/swimming_pool.jpg", title: "Swimming", text: "Confidence and physical development." },
   { img: "/clubs.jpg", title: "Clubs & Societies", text: "Leadership and collaboration." },
 ];
 
@@ -133,7 +133,7 @@ const styles = {
   },
 
   overlay: {
-    backgroundColor: "rgba(0,0,0,0.65)",
+    backgroundColor: "rgba(64, 224, 208)",
     color: "white",
     padding: "60px 30px",
     minHeight: "70vh",
